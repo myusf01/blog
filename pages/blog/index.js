@@ -14,10 +14,10 @@ function blogPage({ posts }) {
                   <a>{post.frontMatter.title}</a>
                 </Link>
               </h2>
-              <p>{post.frontMatter.excerpt}</p>
               <div className="text-gray-400">
                 <span>{post.frontMatter.date}</span>
               </div>
+              <p>{post.frontMatter.excerpt}</p>
             </article>
           );
         })}
