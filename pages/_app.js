@@ -2,12 +2,12 @@ import "../styles/globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { Auth0Provider } from "@auth0/auth0-react";
-
+// get procider info from env file.
 function MyApp({ Component, pageProps }) {
   return (
     <Auth0Provider
-      domain="dev-v8woudn1.eu.auth0.com"
-      clientId="3LqtmGPjEGIaUOVCm6W6bOnu3ttrsk4Z"
+      domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
+      clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT}
       redirectUri={process.env.NEXT_PUBLIC_URL}
     >
       <div className="antialiased text-gray-700">
