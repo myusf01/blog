@@ -1,3 +1,4 @@
+import Image from "next/image";
 function HomePage() {
   return (
     <>
@@ -9,7 +10,7 @@ function HomePage() {
         </div>
       </div>
       <div className="site-4xl-container mt-20">
-        <img src="/ben.jpg" />
+        <Image src="/ben.jpg" alt="it's is me" />
       </div>
     </>
   );
