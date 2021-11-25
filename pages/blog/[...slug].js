@@ -3,18 +3,31 @@ import { useHydrate } from "next-mdx/client";
 import { mdxComponents } from "../../components/mdxComponents";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
+import Form from "../../components/form";
+import Comments from "../../components/comments";
 
 export default function PostPage({ post }) {
-  const {
-    loginWithPopup,
-    isAuthenticated,
-    logout,
-    user,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { getAccessTokenSilently } = useAuth0();
 
   const [text, textSet] = useState("");
   const [url, urlSet] = useState(null);
+  const [comments, commentsSet] = useState([]);
+
+  const fetchComment = async () => {
+    const query = new URLSearchParams({ url });
+    const newUrl = `/api/comment?${query.toString()}`;
+    const response = await fetch(newUrl, {
+      method: "GET",
+    });
+    const data = await response.json();
+    commentsSet(data);
+  };
+
+  useEffect(() => {
+    if (!url) return;
+    fetchComment();
+  }, [url]);
+
   useEffect(() => {
     const url = window.location.origin + window.location.pathname;
     urlSet(url);
@@ -27,12 +40,14 @@ export default function PostPage({ post }) {
     e.preventDefault();
     const userToken = await getAccessTokenSilently();
 
-    const response = await fetch("/api/comment", {
+    await fetch("/api/comment", {
       method: "POST",
       body: JSON.stringify({ text, userToken, url }),
       headers: { "Content-Type": "application/json" },
     });
-    const data = await response.json();
+
+    fetchComment();
+    textSet("");
   };
 
   return (
@@ -43,49 +58,8 @@ export default function PostPage({ post }) {
         <hr className="my-4" />
         <div className="prose">{content}</div>
       </article>
-      <form className="mt-10" onSubmit={onSubmit}>
-        <textarea
-          rows="3"
-          className="border border-gray-400 w-full block p-4 rounded"
-          onChange={(e) => {
-            textSet(e.target.value);
-          }}
-        ></textarea>
-        <div className="mt-4">
-          {isAuthenticated ? (
-            <div className="flex items-center">
-              <button className="btn-blue">Send</button>
-              <img
-                src={user.picture}
-                width={30}
-                className="rounded-full mx-2"
-              />
-              <span>{user.name}</span>
-              <button
-                type="button"
-                onClick={() =>
-                  logout({ returnTo: process.env.NEXT_PUBLIC_URL + "/blog" })
-                }
-                className="btn-red ml-auto"
-              >
-                {" "}
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div>
-              <button
-                className="btn-blue"
-                type="button"
-                onClick={() => loginWithPopup()}
-              >
-                {" "}
-                Login
-              </button>
-            </div>
-          )}
-        </div>
-      </form>
+      <Form onSubmit={onSubmit} textSet={textSet} text={text} />
+      <Comments comments={comments} />
     </div>
   );
 }

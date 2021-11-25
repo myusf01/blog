@@ -37,6 +37,12 @@ export default async function handler(req, res) {
   }
   //fetch
   if (req.method === "GET") {
-    res.status(200).json({ name: "John Doe" });
+    const { url } = req.query;
+    let redis = new Redis(process.env.REDIS_URL);
+    const comments = await redis.lrange(url, 0, -1);
+    redis.quit();
+
+    const data = comments.map((o) => JSON.parse(o));
+    res.status(200).json(data);
   }
 }
