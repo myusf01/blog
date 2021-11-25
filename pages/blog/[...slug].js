@@ -26,7 +26,7 @@ export default function PostPage({ post }) {
   useEffect(() => {
     if (!url) return;
     fetchComment();
-  }, [url]);
+  });
 
   useEffect(() => {
     const url = window.location.origin + window.location.pathname;
