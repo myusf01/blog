@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps }) {
       clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT}
       redirectUri={process.env.NEXT_PUBLIC_URL}
     >
-      <div className="antialiased text-gray-700">
+      <div className="antialiased text-gray-700 ">
         <Header />
-        <main className="mt-6 mb-20">
+        <main className="mt-6 mb-20 ">
           <Component {...pageProps} />
         </main>
         <Footer />

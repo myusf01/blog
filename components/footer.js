@@ -1,8 +1,8 @@
-import SVG from "../components/svg_link";
+import SVG from "../components/svgLink";
 
 export default function footer() {
   return (
-    <footer className="w-full ">
+    <footer className="site-container mx-auto">
       <hr className="max-w-md mx-auto border-gray-300" />
       <div className="space-y-1 text-center my-4 ">
         <span className="block">
@@ -16,20 +16,20 @@ export default function footer() {
             <SVG
               href="https://github.com/myusf01"
               src="/svg/github.svg"
-              height={30}
-              width={30}
+              height={20}
+              width={20}
             />
             <SVG
               href="https://www.instagram.com/myuusfy1/"
               src="/svg/instagram.svg"
-              height={30}
-              width={30}
+              height={20}
+              width={20}
             />
             <SVG
               href="https://www.linkedin.com/in/muhammed-yusuf"
               src="/svg/linkedin.svg"
-              height={30}
-              width={30}
+              height={20}
+              width={20}
             />
           </div>
         </div>
