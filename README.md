@@ -5,6 +5,9 @@ My personal blog page built with Next.JS, Redis and auth0.
   >NodeJS
   >
   >npm or yarn(I'm using npm)
+  >Upstash Account and connection
+  >Auth0 account, client id and domain name to access.
+  >
  
  ## How run it for yourself?
   
