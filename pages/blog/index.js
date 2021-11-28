@@ -2,9 +2,11 @@
 import { getAllNodes } from "next-mdx/server";
 import Link from "next/link";
 // Components
+import getGitContent from "../../components/getGitContent";
 import HeroImage from "../../components/heroImage";
 
-function blogPage({ posts }) {
+function blogPage({ posts, gitContent }) {
+  console.log(gitContent);
   return (
     <div className="site-container ">
       <div className="space-y-4">
@@ -40,6 +42,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts: await getAllNodes("post"),
+      gitContent: await getGitContent(),
     },
   };
 }
