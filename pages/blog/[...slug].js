@@ -19,6 +19,7 @@ export default function PostPage({ post }) {
         <h1 className="text-4xl font-bold">{post.frontMatter.title}</h1>
         <p className="mt-5">{post.frontMatter.excerpt}</p>
         <hr className="my-4" />
+
         <div className="prose">{content}</div>
       </article>
       <Form onSubmit={onSubmit} textSet={textSet} text={text} />

@@ -1,4 +1,9 @@
 function hasImage({ image }) {
+  // TODO:
+  //      if frontMatter doest have any image
+  //      select and return first image
+  //      if post doesn't contain any image
+  //      return default empty image or nothing
   if (image === undefined) return false;
   return true;
 }

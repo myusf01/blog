@@ -12,7 +12,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="site-4xl-container mt-20">
-        <img src="img/ben.jpg" alt="it's is me" />
+        <img src="img/ben.jpg" alt="it's is me" className="rounded-lg" />
       </div>
     </>
   );

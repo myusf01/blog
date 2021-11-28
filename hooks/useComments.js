@@ -21,12 +21,12 @@ export default function useComments(params) {
   useEffect(() => {
     if (!url) return;
     fetchComment();
-  });
+  }, []);
 
   useEffect(() => {
     const url = window.location.origin + window.location.pathname;
     urlSet(url);
-  }, []);
+  }, [url]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
