@@ -6,6 +6,7 @@ import { mdxComponents } from "../../components/mdxComponents";
 import Form from "../../components/form";
 import Comments from "../../components/comments";
 import useComments from "../../hooks/useComments";
+import getAllPostsSlug from "../../lib/getAllPostsSlug";
 
 export default function PostPage({ post }) {
   const [comments, onSubmit, text, textSet] = useComments();

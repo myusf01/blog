@@ -1,35 +1,37 @@
 /* eslint-disable @next/next/no-img-element */
-import { getAllNodes } from "next-mdx/server";
+// import { getAllNodes } from "next-mdx/server";
 import Link from "next/link";
 // Components
-import getGitContent from "../../components/getGitContent";
+import resultPost from "../../lib/getGitContent";
 import HeroImage from "../../components/heroImage";
 
-function blogPage({ posts, gitContent }) {
-  console.log(gitContent);
+function blogPage({ posts, frontMatter }) {
   return (
     <div className="site-container ">
       <div className="space-y-4">
         {posts.map((post) => {
           return (
-            <article key={post.url} className="max-w-xl mx-auto space-y-1">
-              <Link href={post.url}>
+            <article
+              key={frontMatter.name}
+              className="max-w-xl mx-auto space-y-1"
+            >
+              <Link href={frontMatter.name}>
                 <a>
                   <HeroImage
-                    frontMatter={post.frontMatter}
+                    frontMatter={frontMatter}
                     className="mx-auto rounded-xl"
                   />
                 </a>
               </Link>
               <h2 className="text-2xl font-bold">
                 <Link href={post.url}>
-                  <a>{post.frontMatter.title}</a>
+                  <a>{frontMatter.title}</a>
                 </Link>
               </h2>
               <div className="text-gray-400">
-                <span>{post.frontMatter.date}</span>
+                <span>{frontMatter.date}</span>
               </div>
-              <p>{post.frontMatter.excerpt}</p>
+              <p>{frontMatter.excerpt}</p>
             </article>
           );
         })}
@@ -39,10 +41,12 @@ function blogPage({ posts, gitContent }) {
 }
 
 export async function getStaticProps() {
+  console.log("data", await resultPost());
+
   return {
     props: {
-      posts: await getAllNodes("post"),
-      gitContent: await getGitContent(),
+      posts: await resultPost(),
+      frontMatter: [],
     },
   };
 }
