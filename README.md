@@ -20,9 +20,11 @@ NEXT_PUBLIC_URL=http://localhost:3000/
 NEXT_PUBLIC_AUTH0_CLIENT=
 NEXT_PUBLIC_AUTH0_DOMAIN=
 REDIS_URL=
+GITHUB_REPO_LINK=
+GITHUB_ACCESS_KEY=
 ```
 
 3. Run `npm i` to install required packages.
 4. Run `npm run dev` to start development server
 5. I's ready!
-6. Open http://localhost:300
+6. Open <http://localhost:300>

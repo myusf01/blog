@@ -1,53 +1,48 @@
-/* eslint-disable @next/next/no-img-element */
-// import { getAllNodes } from "next-mdx/server";
-import Link from "next/link";
+import Link from 'next/link'
 // Components
-import resultPost from "../../lib/getGitContent";
-import HeroImage from "../../components/heroImage";
+import resultPost from '../../lib/getGitContent'
+import HeroImage from '../../components/heroImage'
 
-function blogPage({ posts, frontMatter }) {
+function blogPage({ posts }) {
   return (
     <div className="site-container ">
       <div className="space-y-4">
-        {posts.map((post) => {
+        {posts.map(post => {
           return (
             <article
-              key={frontMatter.name}
+              key={post.name}
               className="max-w-xl mx-auto space-y-1"
             >
-              <Link href={frontMatter.name}>
+              <Link href={post.path}>
                 <a>
                   <HeroImage
-                    frontMatter={frontMatter}
+                    frontMatter={post.frontMatter}
                     className="mx-auto rounded-xl"
                   />
                 </a>
               </Link>
               <h2 className="text-2xl font-bold">
-                <Link href={post.url}>
-                  <a>{frontMatter.title}</a>
+                <Link href={post.path}>
+                  <a>{post.frontMatter.title}</a>
                 </Link>
               </h2>
               <div className="text-gray-400">
-                <span>{frontMatter.date}</span>
+                <span>{post.frontMatter.date}</span>
               </div>
-              <p>{frontMatter.excerpt}</p>
+              <p>{post.frontMatter.excerpt}</p>
             </article>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  console.log("data", await resultPost());
-
   return {
     props: {
-      posts: await resultPost(),
-      frontMatter: [],
-    },
-  };
+      posts: await resultPost()
+    }
+  }
 }
-export default blogPage;
+export default blogPage
