@@ -25,4 +25,4 @@ REDIS_URL=
 3. Run `npm i` to install required packages.
 4. Run `npm run dev` to start development server
 5. I's ready!
-6. Open http://localhost:300
+6. Open http://localhost:3000
