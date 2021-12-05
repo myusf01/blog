@@ -2,6 +2,7 @@ import Link from 'next/link'
 // Components
 import resultPost from '../../lib/getGitContent'
 import HeroImage from '../../components/heroImage'
+import getPostsPaths from '../../lib/getPostsPaths'
 
 function blogPage({ posts }) {
   return (
@@ -13,7 +14,7 @@ function blogPage({ posts }) {
               key={post.name}
               className="max-w-xl mx-auto space-y-1"
             >
-              <Link href={post.path}>
+              <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
                 <a>
                   <HeroImage
                     frontMatter={post.frontMatter}
@@ -22,7 +23,7 @@ function blogPage({ posts }) {
                 </a>
               </Link>
               <h2 className="text-2xl font-bold">
-                <Link href={post.path}>
+                <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
                   <a>{post.frontMatter.title}</a>
                 </Link>
               </h2>
