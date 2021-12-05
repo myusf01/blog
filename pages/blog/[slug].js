@@ -30,17 +30,35 @@ export default function PostPage({ post }) {
   );
 }
 
-export async function getStaticPaths() {
-  const allPaths = await getPostsPaths()
-  const paths = Promise.all(allPaths.map(async (slug)=>({params: {slug: await slug}})))
-  return {
-    paths: await paths,
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   const allPaths = await getPostsPaths()
+//   const paths = Promise.all(allPaths.map(async (slug)=>({params: {slug: await slug}})))
+//   return {
+//     paths: await paths,
+//     fallback: false,
+//   };
+// }
  
 
-export async function getStaticProps({params}) {
+// export async function getStaticProps({params}) {
+//   const postPath = params.slug
+//   const source = await findPostByPath(postPath)
+  
+//   const mdxSource = await serialize(source.rawData,{scope:source.frontMatter})
+
+//   if (!source) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: {
+//       post: mdxSource,
+//     },
+//   };
+// }
+export async function getServerSideProps({params}) {
   const postPath = params.slug
   const source = await findPostByPath(postPath)
   
