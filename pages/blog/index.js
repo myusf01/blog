@@ -2,7 +2,6 @@ import Link from 'next/link'
 // Components
 import resultPost from '../../lib/getGitContent'
 import HeroImage from '../../components/heroImage'
-import getPostsPaths from '../../lib/getPostsPaths'
 
 function blogPage({ posts }) {
   return (
