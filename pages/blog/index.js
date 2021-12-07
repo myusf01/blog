@@ -1,17 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
-import { getAllNodes } from "next-mdx/server";
-import Link from "next/link";
+import Link from 'next/link'
 // Components
-import HeroImage from "../../components/heroImage";
+import resultPost from '../../lib/getGitContent'
+import HeroImage from '../../components/heroImage'
 
 function blogPage({ posts }) {
   return (
     <div className="site-container ">
       <div className="space-y-4">
-        {posts.map((post) => {
+        {posts.map(post => {
           return (
-            <article key={post.url} className="max-w-xl mx-auto space-y-1">
-              <Link href={post.url}>
+            <article
+              key={post.name}
+              className="max-w-xl mx-auto space-y-1"
+            >
+              <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
                 <a>
                   <HeroImage
                     frontMatter={post.frontMatter}
@@ -20,7 +22,7 @@ function blogPage({ posts }) {
                 </a>
               </Link>
               <h2 className="text-2xl font-bold">
-                <Link href={post.url}>
+                <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
                   <a>{post.frontMatter.title}</a>
                 </Link>
               </h2>
@@ -29,18 +31,25 @@ function blogPage({ posts }) {
               </div>
               <p>{post.frontMatter.excerpt}</p>
             </article>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       posts: await resultPost()
+//     }
+//   }
+// }
+export async function getServerSideProps() {
   return {
     props: {
-      posts: await getAllNodes("post"),
-    },
-  };
+      posts: await resultPost()
+    }
+  }
 }
-export default blogPage;
+export default blogPage
