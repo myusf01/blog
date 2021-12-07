@@ -21,7 +21,7 @@ export default function useComments(params) {
   useEffect(() => {
     if (!url) return;
     fetchComment();
-  }, []);
+  }, [url]);
 
   useEffect(() => {
     const url = window.location.origin + window.location.pathname;
