@@ -14,7 +14,7 @@ export default function PostPage({ post }) {
 
   return (
     <div className="site-container">
-      <article className='text-gray-700'>
+      <article className='text-gray-800'>
         <h1 className="text-4xl font-bold">{post.scope.title}</h1>
         <p className="mt-5">{post.scope.excerpt}</p>
         <hr className="my-4" />
