@@ -3,7 +3,7 @@
       "contentPath": "content/posts",
       "basePath": "/blog",
       "sortBy": "date",
-      "sortOrder": "desc"
+      "sortOrder": "asc"
     },
     "category": {
       "contentPath": "content/categories"

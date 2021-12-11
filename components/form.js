@@ -15,7 +15,7 @@ export default function Form({ onSubmit, text, textSet }) {
         {isAuthenticated ? (
           <div className="flex items-center">
             <button className="btn-blue">Send</button>
-            <img src={user.picture} width={30} className="rounded-full mx-2" />
+            <img src={user.picture} alt={user.name} width={30} className="rounded-full mx-2" />
             <span>{user.name}</span>
             <button
               type="button"
