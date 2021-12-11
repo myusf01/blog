@@ -31,19 +31,6 @@ export default function useComments(params) {
   const onSubmit = async e => {
     e.preventDefault()
     const userToken = await getAccessTokenSilently()
-    // const opts = {
-    //   url: '/api/comment',
-    //   data: { text, userToken, url }
-    // }
-  
-    // console.log(opts);
-
-    // await fetch('/api/comment', {
-    //   method: 'POST',
-    //   body: JSON.stringify({ text, userToken, url }),
-    //   headers: { 'Content-Type': 'application/json' }
-    // })
-
     await axios.post('/api/comment',{ text, userToken, url })
 
 

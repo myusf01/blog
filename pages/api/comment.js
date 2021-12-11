@@ -23,16 +23,8 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json'
       }
     })
-    // const userResponse = await fetch(
-    //   `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/userinfo`,
-    //   {
-    //     headers: {
-    //       Authorization: `Bearer ${userToken}`,
-    //       'Content-Type': 'application/json'
-    //     }
-    //   }
-    // )
-    
+
+
     const user = await userResponse.data
     const comment = {
       id: nanoid(),
