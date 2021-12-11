@@ -1,14 +1,14 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from '@auth0/auth0-react'
 export default function Form({ onSubmit, text, textSet }) {
-  const { loginWithPopup, isAuthenticated, logout, user } = useAuth0();
+  const { loginWithPopup, isAuthenticated, logout, user } = useAuth0()
   return (
     <form className="mt-10" onSubmit={onSubmit}>
       <textarea
         rows="3"
         className="border border-gray-400 w-full block p-4 rounded"
         value={text}
-        onChange={(e) => {
-          textSet(e.target.value);
+        onChange={e => {
+          textSet(e.target.value)
         }}
       ></textarea>
       <div className="mt-4">
@@ -20,11 +20,11 @@ export default function Form({ onSubmit, text, textSet }) {
             <button
               type="button"
               onClick={() =>
-                logout({ returnTo: process.env.NEXT_PUBLIC_URL + "/blog" })
+                logout({ returnTo: process.env.NEXT_PUBLIC_URL + '/blog' })
               }
               className="btn-red ml-auto"
             >
-              {" "}
+              {' '}
               Logout
             </button>
           </div>
@@ -35,12 +35,12 @@ export default function Form({ onSubmit, text, textSet }) {
               type="button"
               onClick={() => loginWithPopup()}
             >
-              {" "}
+              {' '}
               Login
             </button>
           </div>
         )}
       </div>
     </form>
-  );
+  )
 }

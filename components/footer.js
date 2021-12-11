@@ -1,4 +1,4 @@
-import SVG from "../components/svgLink";
+import SVG from '../components/svgLink'
 
 export default function footer() {
   return (
@@ -6,7 +6,7 @@ export default function footer() {
       <hr className="max-w-md mx-auto border-gray-300" />
       <div className="space-y-1 text-center my-4 ">
         <span className="block">
-          رَبِّ اِنّ۪ي لِمَٓا اَنْزَلْتَ اِلَيَّ مِنْ خَيْرٍ فَق۪يرٌ{" "}
+          رَبِّ اِنّ۪ي لِمَٓا اَنْزَلْتَ اِلَيَّ مِنْ خَيْرٍ فَق۪يرٌ{' '}
         </span>
         <span className="block">
           Rabbim doğrusu bana indireceğin her hayra muhtacım.
@@ -35,5 +35,5 @@ export default function footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
