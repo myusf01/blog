@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
 @layer components {
   .site-container {
     @apply max-w-2xl mx-auto px-6;

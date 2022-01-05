@@ -1,16 +1,19 @@
-import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 
 //Components
 import { mdxComponents } from '../../components/mdxComponents'
 import Form from '../../components/form'
 import Comments from '../../components/comments'
-import useComments from '../../hooks/useComments'
 import findPostByPath from '../../lib/findPostByPath'
+// Hooks
+import useComments from '../../hooks/useComments'
+import usePosts from '../../hooks/usePosts'
 
 export default function PostPage({ post }) {
   const [comments, onSubmit, text, textSet] = useComments()
+  const [posta] = usePosts()
 
   return (
     <div className="site-container">

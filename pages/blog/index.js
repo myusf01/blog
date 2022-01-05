@@ -38,13 +38,7 @@ function blogPage({ posts }) {
   )
 }
 
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       posts: await resultPost()
-//     }
-//   }
-// }
+
 export async function getServerSideProps() {
   return {
     props: {
