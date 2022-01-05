@@ -13,6 +13,10 @@ module.exports = {
     //       }
     //     }
     //   }
+    fontFamily:{
+      sans: ['Readex Pro', 'ui-sans-serif', 'system-ui'],
+      mono: ['JetBrains Mono', 'monospace']
+    },
     extend: {
       typography: (theme) => ({
         DEFAULT: {
