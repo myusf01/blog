@@ -35,11 +35,8 @@ export async function getServerSideProps({ params }) {
   const { content, data } = matter(source.rawSource)
 
   const mdxSource = await serialize(content, {
-    scope: data, mdxOptions: {
-      rehypePlugins: [[imageSize, { dir: "public" }]],
-    }
+    scope: data
   })
-
   if (!source) {
     return {
       notFound: true

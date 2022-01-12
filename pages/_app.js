@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { Auth0Provider } from "@auth0/auth0-react";
+import Head from "next/head";
 
 // get provider info from env file.
 function MyApp({ Component, pageProps }) {
@@ -15,6 +16,10 @@ function MyApp({ Component, pageProps }) {
       <div className="text-gray-700 ">
         <Header />
         <main className="mt-6 mb-20">
+          <Head>
+            <title>muhammed yusuf</title>
+
+          </Head>
           <Component {...pageProps} />
         </main>
         <Footer />
@@ -22,5 +27,5 @@ function MyApp({ Component, pageProps }) {
     </Auth0Provider>
   );
 }
- 
+
 export default MyApp;

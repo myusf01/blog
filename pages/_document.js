@@ -5,12 +5,10 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <title>muhammed yusuf</title>
-
                     <link rel="shortcut icon" href="/img/favicon.ico" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-                    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Readex+Pro:wght@200;400;600;700&display=swap" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />
