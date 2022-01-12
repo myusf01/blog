@@ -20,7 +20,7 @@ export default function PostPage({ post }) {
         <p className="mt-3">{post.scope.excerpt}</p>
         <hr className="my-4" />
         <div className="prose">
-          <MDXRemote {...post} components={mdxComponents} lazy/>
+          <MDXRemote {...post} components={mdxComponents} lazy />
         </div>
       </article>
       <Form onSubmit={onSubmit} textSet={textSet} text={text} />
@@ -34,7 +34,11 @@ export async function getServerSideProps({ params }) {
   const source = await findPostByPath(postPath)
   const { content, data } = matter(source.rawSource)
 
-  const mdxSource = await serialize(content, { scope: data })
+  const mdxSource = await serialize(content, {
+    scope: data, mdxOptions: {
+      rehypePlugins: [[imageSize, { dir: "public" }]],
+    }
+  })
 
   if (!source) {
     return {
