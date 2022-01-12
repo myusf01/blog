@@ -16,7 +16,8 @@ export default function PostPage({ post }) {
     <div className="site-container">
       <article className='text-gray-800'>
         <h1 className="text-4xl font-bold">{post.scope.title}</h1>
-        <p className="mt-5">{post.scope.excerpt}</p>
+        <p className="mt-5 ml-auto text-gray-400">{post.scope.date}</p>
+        <p className="mt-3">{post.scope.excerpt}</p>
         <hr className="my-4" />
         <div className="prose">
           <MDXRemote {...post} components={mdxComponents} lazy/>

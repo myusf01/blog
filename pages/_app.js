@@ -3,7 +3,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-// get procider info from env file.
+// get provider info from env file.
 function MyApp({ Component, pageProps }) {
   return (
     <Auth0Provider
@@ -22,5 +22,5 @@ function MyApp({ Component, pageProps }) {
     </Auth0Provider>
   );
 }
-
+ 
 export default MyApp;
