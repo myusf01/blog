@@ -5,6 +5,9 @@ import matter from 'gray-matter'
 //Components
 import { mdxComponents } from '../../components/mdxComponents'
 import Form from '../../components/form'
+import CustomImage from "../../components/customImage";
+import ArticleInfo from "../../components/articleInfo";
+
 import Comments from '../../components/comments'
 import useComments from '../../hooks/useComments'
 import findPostByPath from '../../lib/findPostByPath'
@@ -13,19 +16,31 @@ export default function PostPage({ post }) {
   const [comments, onSubmit, text, textSet] = useComments()
 
   return (
-    <div className="site-container">
-      <article className='text-gray-800'>
-        <h1 className="text-4xl font-bold">{post.scope.title}</h1>
-        <p className="mt-5 ml-auto text-gray-400">{post.scope.date}</p>
-        <p className="mt-3">{post.scope.excerpt}</p>
-        <hr className="my-4" />
-        <div className="prose">
-          <MDXRemote {...post} components={mdxComponents} lazy />
+    <>
+      <article className='site-4xl-container '>
+        <CustomImage
+          source={post.scope.image}
+          width={900}
+          height={600}
+          alt={post.scope.excerpt} />
+
+        <div className="site-container">
+
+          <ArticleInfo
+            title={post.scope.title}
+            date={post.scope.date}
+            excerpt={post.scope.excerpt} />
+
+          <div className="max-w-full prose">
+            <MDXRemote {...post} components={mdxComponents} />
+          </div>
         </div>
       </article>
-      <Form onSubmit={onSubmit} textSet={textSet} text={text} />
-      <Comments comments={comments} />
-    </div>
+      <div className="site-container">
+        <Form onSubmit={onSubmit} textSet={textSet} text={text} />
+        <Comments comments={comments} />
+      </div>
+    </>
   )
 }
 
