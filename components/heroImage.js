@@ -1,3 +1,5 @@
+import CustomImage from "./customImage";
+
 function hasImage({ image }) {
   // TODO:
   //      if frontMatter doest have any image
@@ -9,13 +11,22 @@ function hasImage({ image }) {
 }
 function HeroImage({ frontMatter, className }) {
   return hasImage(frontMatter) ? (
-    <img
-      src={frontMatter.image}
+    <CustomImage
+      source={frontMatter.image}
+      width={900}
+      height={600}
       alt={frontMatter.excerpt}
       className={className}
     />
+
   ) : (
-    <img src="/img/my-ico.jpg" alt="empty-image" className={className} />
+    <CustomImage
+      source="/img/my-ico.jpg"
+      width={900}
+      height={600}
+      alt="empty-image"
+      className={className}
+    />
   );
 }
 

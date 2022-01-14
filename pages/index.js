@@ -1,3 +1,5 @@
+import CustomImage from "../components/customImage";
+
 export default function HomePage() {
   return (
     <>
@@ -12,7 +14,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="site-4xl-container mt-20">
-        <img src="img/ben.jpg" alt="it's is me" className="rounded-lg" />
+        <CustomImage source={'img/ben.jpg'} width={900} height={600} alt="it's is me" className="rounded-lg" />
       </div>
     </>
   );

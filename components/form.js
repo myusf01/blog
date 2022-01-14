@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { useAuth0 } from '@auth0/auth0-react'
+
 export default function Form({ onSubmit, text, textSet }) {
   const { loginWithPopup, isAuthenticated, logout, user } = useAuth0()
   return (
