@@ -4,10 +4,17 @@
 /*  */
 @layer base {
   html {
-    @apply font-readex antialiased;
+    @apply font-sans antialiased;
+  }
+  code {
+    @apply font-light
   }
 }
 @layer components {
+
+  .image {
+    @apply min-w-full
+  }
   .site-container {
     @apply max-w-2xl mx-auto px-6;
   }
