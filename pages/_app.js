@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
             <meta property="og:image" content='/public/img/ben.jpg' />
             <meta property="og:type" content="website" />
             <meta property="og:description" content="merhaba, bloguma hoş geldin." />
-            <meta name="twitter:card" content="summary"></meta>
+            <meta name="twitter:card" content="summary_large_image"></meta>
           </Head>
           <Component {...pageProps} />
         </main>
