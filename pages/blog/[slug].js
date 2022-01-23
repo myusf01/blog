@@ -7,7 +7,7 @@ import { mdxComponents } from '../../components/mdxComponents'
 import Form from '../../components/form'
 import CustomImage from "../../components/customImage";
 import ArticleInfo from "../../components/articleInfo";
-
+import Head from "next/head";
 import Comments from '../../components/comments'
 import useComments from '../../hooks/useComments'
 import findPostByPath from '../../lib/findPostByPath'
@@ -17,6 +17,15 @@ export default function PostPage({ post }) {
 
   return (
     <>
+      <Head>
+        <title>muhammed yusuf - {post.scope.title}</title>
+        <meta property="og:title" content={post.scope.title} />
+        <meta property="og:url" content={`https://myusuf.net/${post.postPath}`} />
+        <meta property="og:image" content={post.scope.image} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={post.scope.excerpt} />
+        <meta name="twitter:card" content="summary"></meta>
+      </Head>
       <article className='site-4xl-container '>
         <CustomImage
           source={post.scope.image}
@@ -52,6 +61,8 @@ export async function getServerSideProps({ params }) {
   const mdxSource = await serialize(content, {
     scope: data
   })
+  const url = params
+  console.log(url);
   if (!source) {
     return {
       notFound: true
@@ -60,7 +71,8 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      post: mdxSource
+      post: { postPath, ...mdxSource }
+
     }
   }
 }
