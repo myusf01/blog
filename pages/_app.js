@@ -18,12 +18,7 @@ function MyApp({ Component, pageProps }) {
         <main className="mt-6 mb-20">
           <Head>
             <title>muhammed yusuf</title>
-            <meta property="og:title" content="muhammed yusuf - blog" />
-            <meta property="og:url" content={`https://myusuf.net/`} />
-            <meta property="og:image" content='https://myusuf.net/_next/image?url=/public/img/ben.jpg&w=3840&q=75' />
-            <meta property="og:type" content="website" />
-            <meta property="og:description" content="merhaba, bloguma hoş geldin." />
-            <meta name="twitter:card" content="summary_large_image"></meta>
+
           </Head>
           <Component {...pageProps} />
         </main>
