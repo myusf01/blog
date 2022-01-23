@@ -19,11 +19,11 @@ export default function PostPage({ post }) {
     <>
       <Head>
         <title>muhammed yusuf - {post.scope.title}</title>
-        <meta property="og:title" content={post.scope.title} />
-        <meta property="og:url" content={`https://myusuf.net/${post.postPath}`} />
-        <meta property="og:image" content={`https://myusuf.net/${post.scope.image}`} />
+        <meta property="og:title" content={post.scope.title} key="ogtitle" />
+        <meta property="og:url" content={`https://myusuf.net/${post.postPath}`} key="ogurl" />
+        <meta property="og:image" content={`https://myusuf.net/${post.scope.image}`} key="ogimage" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content={post.scope.excerpt} />
+        <meta property="og:description" content={post.scope.excerpt} key="ogdesc" />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <article className='site-4xl-container '>
