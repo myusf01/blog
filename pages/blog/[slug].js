@@ -25,6 +25,9 @@ export default function PostPage({ post }) {
         <meta property="og:type" content="article" />
         <meta property="og:description" content={post.scope.excerpt} key="ogdesc" />
         <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:url" content={`https://myusuf.net/${post.postPath}`}></meta>
+        <meta name="twitter:title" content={post.scope.title}></meta>
+        <meta name="twitter:description" content={post.scope.excerpt}></meta>
       </Head>
       <article className='site-4xl-container '>
         <CustomImage
