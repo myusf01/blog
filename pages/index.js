@@ -8,7 +8,7 @@ export default function HomePage() {
         <meta property="og:title" content="muhammed yusuf" key="ogtitle" />
         <meta property="og:url" content={`https://myusuf.net/blog`} key="ogurl" />
         <meta property="og:image" content={`https://myusuf.net/_next/image?url=/img/ben.jpg&w=1200&q=75`} key="ogimage" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:description" content="yazılım öğrenmeye çalışıyorum" key="ogdesc" />
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta name="twitter:url" content={`https://myusuf.net/blog`}></meta>
