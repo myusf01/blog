@@ -11,7 +11,7 @@ function blogPage({ posts }) {
       <Head>
         <meta property="og:title" content="muhammed yusuf" key="ogtitle" />
         <meta property="og:url" content={`https://myusuf.net/blog`} key="ogurl" />
-        <meta property="og:image" content={`https://myusuf.net/_next/image?url=/img/ben.jpg&w=3840&q=75`} key="ogimage" />
+        <meta property="og:image" content={`https://myusuf.net/_next/image?url=/img/ben.jpg&w=1200&q=75`} key="ogimage" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="yazılım öğrenmeye çalışıyorum" key="ogdesc" />
         <meta name="twitter:card" content="summary_large_image"></meta>
