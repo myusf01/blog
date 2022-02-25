@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://github.com/myusf01/ss-pipe#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -40,4 +41,5 @@
     "prettier": "^2.5.1",
     "tailwindcss": "^2.2.19"
   }
+
 }
