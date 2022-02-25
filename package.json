@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/myusf01/ss-pipe#readme",
+  "homepage": "https://myusuf.net/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
