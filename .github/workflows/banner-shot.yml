@@ -1,0 +1,17 @@
+name: Generate Banner
+on:
+  push:
+    branches: [main]
+
+jobs:
+  generate-screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: dispatch generator
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: screenshot-banner-generator
+          repo: myusf01/ss-pipe
+          token: ${{ secrets.FLOW_TOKEN }}
+          inputs: '{ "repo": "${{ github.repository }}" }'
