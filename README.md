@@ -3,7 +3,7 @@
 My personal blog page built with Next.JS, Redis and auth0.
 
 
-![my-blog](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/blog_myusuf.png)
+![my-blog](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/blog_myusuf-banner.png)
 
 ## Requirements
 
